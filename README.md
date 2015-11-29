@@ -1,4 +1,4 @@
 # config-api
 A RESTful service for retrieving configuration information.
 
-[![Build Status](https://travis-ci.org/Jaaromy/config-api.svg?branch=master)](https://travis-ci.org/Jaaromy/config-api)
+[![Circle CI](https://circleci.com/gh/Jaaromy/config-api.svg?style=svg)](https://circleci.com/gh/Jaaromy/config-api)
