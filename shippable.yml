@@ -4,8 +4,8 @@ node_js:
   - 5.1
 
 env:
-	- secure: KeFGQzhV7NybanV2BT4pbHYo6yYfSyBZJHXmtfZ/5yUX/Rs4zEw5o7eYHgCHKPvWsdyWjXVdciGHifdK76xcSyhpbheuBT2m5mq9SjVp4JPEDoSzTy9lreo+Bdav5pF/z469sxC5XfJ1hvQnhPHKkeM3ZebHsFZ90+OMXwjo/bPKxL0VJbaqCW++mbSC/RiNFWqNtrmjTsRz+7xHwzmmvfAwPXa9cOxgfaHUrQLa5JQmN6yvkBUWaMbZxz6vf266Dxb7bnTK1EzuVJQBNrrh4nF7yuKx1GS66CjsIhYJiKZ8f1SLb8WHW41KUiPynI/9htvmQtCP6ASOY+RGqLmVDQ==
+	- secure: CjWTsAHtlsLL5DSBS+4qBVGUqIrW1XFwt24L/32kyI+QgV+bUvrvFrAmbpB8jSX4qOm4RVGEW+Fp4ps/1DaWiUmQq5TbFclPawgRlV3cajBCl/Cb67ajq0pkEBItfRz5D6kOQGr8fld1z8YZCQ/gLJ1ibc7bzEa7kLkTMNSZmw43/inlvJazoVCHxkdZSN1kn6Nl3Ip0Ncur+v+siNyv556AyyPLt/+k7CFrzAFdzLI9tx/x6w+Pg6flZbnahin3BEL+f5Vf+SBoeUX1+rnPTA3he1R63TbZd0d0CAMSru2nzGTMFuFFR02U/XiHK3p0XHG4w2eZrwY8uSGBkuNBWQ==
 
 # Deploy to remote machine
 after_script:
-      - if [ "$BRANCH" == "master" ]; then ssh $REMOTE_USERNAME@$REMOTE_MACHINE "cd $DEPLOY_DIRECTORY && git pull && npm install && pm2 restart configapi"; fi
+      - if [ "$BRANCH" == "master" ]; then ssh $REMOTE_USERNAME@$REMOTE_MACHINE "cd $DEPLOY_DIRECTORY && git pull && npm install && pm2 restart $PM2_APP_NAME"; fi
