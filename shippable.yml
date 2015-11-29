@@ -1,0 +1,11 @@
+language: node_js
+
+node_js:
+  - 5.1
+
+env:
+	- secure: KeFGQzhV7NybanV2BT4pbHYo6yYfSyBZJHXmtfZ/5yUX/Rs4zEw5o7eYHgCHKPvWsdyWjXVdciGHifdK76xcSyhpbheuBT2m5mq9SjVp4JPEDoSzTy9lreo+Bdav5pF/z469sxC5XfJ1hvQnhPHKkeM3ZebHsFZ90+OMXwjo/bPKxL0VJbaqCW++mbSC/RiNFWqNtrmjTsRz+7xHwzmmvfAwPXa9cOxgfaHUrQLa5JQmN6yvkBUWaMbZxz6vf266Dxb7bnTK1EzuVJQBNrrh4nF7yuKx1GS66CjsIhYJiKZ8f1SLb8WHW41KUiPynI/9htvmQtCP6ASOY+RGqLmVDQ==
+
+# Deploy to remote machine
+after_script:
+      - if [ "$BRANCH" == "master" ]; then ssh $REMOTE_USERNAME@$REMOTE_MACHINE "cd $DEPLOY_DIRECTORY && git pull && npm install && pm2 restart configapi"; fi
